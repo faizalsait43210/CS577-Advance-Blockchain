@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Voting DApp</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family: Arial, Helvetica, sans-serif;padding:20px;max-width:800px;margin:auto}
+    button{padding:8px 12px;margin:6px}
+    input, select {padding:6px;margin:6px}
+    .card{border:1px solid #ddd;padding:12px;margin:8px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h2>Voting DApp</h2>
+  <div id="account">Not connected</div>
+
+  <div class="card">
+    <h3>Admin actions (owner)</h3>
+    <input id="candidateName" placeholder="Candidate name" />
+    <button id="registerCandidateBtn">Register Candidate</button>
+    <br/>
+    <input id="voterAddress" placeholder="Voter address (0x...)" />
+    <button id="registerVoterBtn">Register Voter</button>
+  </div>
+
+  <div class="card">
+    <h3>Voter actions</h3>
+    <select id="candidateSelect"></select>
+    <button id="voteBtn">Vote</button>
+  </div>
+
+  <div class="card">
+    <h3>Results</h3>
+    <button id="refreshBtn">Refresh</button>
+    <div id="candidatesList"></div>
+    <div id="winners"></div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.9.2/dist/ethers.umd.min.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
