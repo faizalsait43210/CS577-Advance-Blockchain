@@ -1,0 +1,254 @@
+{
+  "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+  "abi": [
+    {
+      "type": "constructor",
+      "stateMutability": "undefined",
+      "payable": false,
+      "inputs": []
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "CertificateIssued",
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "issuer",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "recipient",
+          "indexed": true
+        },
+        {
+          "type": "string",
+          "name": "uri",
+          "indexed": false
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "CertificateRevoked",
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id",
+          "indexed": true
+        },
+        {
+          "type": "address",
+          "name": "issuer",
+          "indexed": true
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "RegistrarAdded",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "registrar",
+          "indexed": true
+        }
+      ]
+    },
+    {
+      "type": "event",
+      "anonymous": false,
+      "name": "RegistrarRemoved",
+      "inputs": [
+        {
+          "type": "address",
+          "name": "registrar",
+          "indexed": true
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "addRegistrar",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_registrar"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "getCertificate",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bytes32",
+          "name": "certId"
+        },
+        {
+          "type": "address",
+          "name": "issuer"
+        },
+        {
+          "type": "address",
+          "name": "recipient"
+        },
+        {
+          "type": "string",
+          "name": "uri"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        },
+        {
+          "type": "bool",
+          "name": "revoked"
+        },
+        {
+          "type": "bool",
+          "name": "exists"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "issueCertificate",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id"
+        },
+        {
+          "type": "address",
+          "name": "recipient"
+        },
+        {
+          "type": "string",
+          "name": "uri"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "owner",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [],
+      "outputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "registrars",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": ""
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": ""
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "removeRegistrar",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "address",
+          "name": "_registrar"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "revokeCertificate",
+      "constant": false,
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id"
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "type": "function",
+      "name": "verify",
+      "constant": true,
+      "stateMutability": "view",
+      "payable": false,
+      "inputs": [
+        {
+          "type": "bytes32",
+          "name": "id"
+        }
+      ],
+      "outputs": [
+        {
+          "type": "bool",
+          "name": "exists"
+        },
+        {
+          "type": "bool",
+          "name": "revoked"
+        },
+        {
+          "type": "address",
+          "name": "issuer"
+        },
+        {
+          "type": "address",
+          "name": "recipient"
+        },
+        {
+          "type": "string",
+          "name": "uri"
+        },
+        {
+          "type": "uint256",
+          "name": "timestamp"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Transcript Registry</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family:Arial;padding:18px;max-width:900px;margin:auto}
+    .card{border:1px solid #ddd;padding:12px;margin:10px;border-radius:6px}
+    input,button,select{padding:8px;margin:6px}
+  </style>
+</head>
+<body>
+  <h2>Transcript Verification DApp</h2>
+  <div id="account">Not connected</div>
+
+  <div class="card">
+    <h3>Registrar actions</h3>
+    <button id="addRegistrarBtn">Add Myself as Registrar</button>
+    <br/>
+    <input id="recipient" placeholder="Recipient address (optional)" style="width:60%"/>
+    <input id="uri" placeholder="Metadata URI (IPFS CID or URL)" style="width:60%"/>
+    <input id="raw" placeholder="Raw data to hash (or put id hex)" style="width:60%"/>
+    <button id="issueBtn">Issue Certificate</button>
+    <button id="revokeBtn">Revoke Certificate (by id)</button>
+  </div>
+
+  <div class="card">
+    <h3>Verification</h3>
+    <input id="verifyId" placeholder="Certificate id (0x... or raw text)"/>
+    <button id="verifyBtn">Verify</button>
+    <pre id="verifyResult"></pre>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.9.2/dist/ethers.umd.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
